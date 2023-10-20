@@ -20,18 +20,18 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 st.title("Control Description Checker")
 
-risk_description = st.text_area("Please provide control description...", value="", height=300)
+control_description = st.text_area("Please provide control description...", value="", height=300)
 clicked = st.button("Submit")
 
 
 if clicked:
-    if not risk_description:
+    if not control_description:
         st.warning("Please fill in all the information.")
 
     else:
         with st.spinner("Please wait..."):
-            response = prompting.generate_risks(risk_description)
+            response = prompting.generate_controls(control_description)
 
 
-            risks_output = response["choices"][0]["message"]["content"]
-            st.write(risks_output)
+            controls_output = response["choices"][0]["message"]["content"]
+            st.write(controls_output)
