@@ -6,7 +6,7 @@ import streamlit.components.v1 as components
 im = Image.open("./assets/images/RS-square-logo.jpeg")
 
 st.set_page_config(
-    layout="wide", page_title="RiskSpotlight - Control Description Checker", page_icon=im
+    layout="wide", page_title="RiskSpotlight - Control Description Reviewer", page_icon=im
 )
 
 hide_streamlit_style = """
@@ -18,7 +18,7 @@ hide_streamlit_style = """
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-st.title("Control Description Checker")
+st.title("Control Description Reviewer")
 
 control_description = st.text_area("Please provide control description...", value="", height=300)
 clicked = st.button("Submit")
