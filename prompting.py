@@ -10,7 +10,7 @@ openai.api_key = st.secrets["openai_api_key"]
 
 
 def generate_controls(control_description):
-    text = f""""Review the description of the operational risk control delimited by triple backticks and provide a detailed feedback on the content in alignment with best practices to document operational risk controls. Your feedback should include the positive aspects of the provided control description, feedback on spelling and grammar mistakes, feedback on gaps in the description and guidance to address these, and revised version of the description which aligns with best practices. {control_description}"""
+    text = f""""Review the description of the operational risk control delimited by triple backticks and provide a detailed feedback on the content in alignment with best practices to document operational risk controls. Your feedback should include the positive aspects of the provided control description, feedback on spelling and grammar mistakes, feedback on gaps in the description and guidance to address these, and revised version of the description which aligns with best practices. {control_description} Please provide the output in where the headings are in BOLD and paragraph are in normal font"""
 
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
